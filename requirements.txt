@@ -1,36 +1,23 @@
 --extra-index-url https://download.pytorch.org/whl/cu118
 
-# Aseguramos que numpy sea una versión compatible
-numpy>=1.22,<=1.23.5  # Asegurando que numpy esté en el rango compatible con los demás paquetes
-
-# Versiones de los paquetes principales
-opencv-python==4.7.0.72
-onnx==1.14.0
-insightface==0.7.3
-psutil==5.9.5
-tk==0.1.0
-customtkinter==5.1.3
-pillow==9.5.0
-
-# Torch y torchvision para CUDA 118
-torch==2.0.1+cu118; sys_platform != 'darwin'
-torch==2.0.1; sys_platform == 'darwin'
-torchvision==0.15.2+cu118; sys_platform != 'darwin'
-torchvision==0.15.2; sys_platform == 'darwin'
-
-# onnxruntime y onnxruntime-gpu para soporte de GPU
-onnxruntime-gpu==1.15.0; sys_platform != 'darwin'
-
-# Versiones de tensorflow que no causen conflicto
-tensorflow==2.12.0; sys_platform != 'darwin'
-
-# Otros paquetes
-opennsfw2==0.10.2
-protobuf==4.23.2
-tqdm==4.65.0
-gfpgan==1.3.8
-
-# Configuración para sistemas macOS específicos
-onnxruntime==1.15.0; sys_platform == 'darwin' and platform_machine != 'arm64'
-onnxruntime-silicon==1.13.1; sys_platform == 'darwin' and platform_machine == 'arm64'
-
+numpy
+opencv-python
+onnx
+insightface
+psutil
+tk
+customtkinter
+pillow
+torch; sys_platform != 'darwin'
+torch; sys_platform == 'darwin'
+torchvision; sys_platform != 'darwin'
+torchvision; sys_platform == 'darwin'
+onnxruntime; sys_platform == 'darwin' and platform_machine != 'arm64'
+onnxruntime-silicon; sys_platform == 'darwin' and platform_machine == 'arm64'
+onnxruntime-gpu; sys_platform != 'darwin'
+tensorflow; sys_platform == 'darwin'
+tensorflow; sys_platform != 'darwin'
+opennsfw2
+protobuf
+tqdm
+gfpgan
